@@ -86,8 +86,16 @@ html,body{
         <li id="e-l-h-ai"><img src="https://run.celeritous.xct.f5.si/img/editor/l-h-ai.svg"/><span>AI</span></li>
       </ul>
     </div>
+    <div id="e-lm"></div>
+    <div id="backpack"><div id="backpack-h">バックパック</div></div>
   </div>
-  <div id="editor-r"></div>
+  <div id="editor-r">
+    <div id="stage"></div>
+    <div id="sp-ste">
+      <div id="r-sp"><div id="r-sp-u"></div><div id="r-sp-d"></div></div>
+      <div id="r-ste"><div id="r-ste-h">ステージ</div><div id="r-ste-img"></div><div id="r-ste-n">背景</div><div id="r-ste-co"></div></div>
+    </div>
+  </div>
 </div>`);
   }
 })();
@@ -122,3 +130,9 @@ const pwt = new Proxy(progressData, {
   }
 });
 upb();
+pwt.load_n=1;
+
+//目標について
+//WASMとWebGPUによる高速化
+//WASMは動的生成。WebGPUはGPGPUとしての使い方もしたい
+-->[[タボワより速く]]が目標!!
