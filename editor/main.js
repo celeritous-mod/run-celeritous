@@ -131,7 +131,31 @@ const pwt = new Proxy(progressData, {
 });
 upb();
 pwt.load_n=1;
-
+(() => {
+  const s = document.createElement("style");
+  s.textContent = `
+header {
+  width:100%;
+  height:50px;
+  background-color:#5BAB77;
+  position: fixed;
+  top:0;
+  left:0;
+}
+#editor-l {
+  width: calc(100% - 482px);
+  height: auto;
+}
+#editor-a {
+  background-color:#E6F0FF;
+}
+#editor-r {
+  width: 482px;
+  height: auto;
+}
+`;
+  document.head.append(s);
+})();
 //目標について
 //WASMとWebGPUによる高速化
 //WASMは動的生成。WebGPUはGPGPUとしての使い方もしたい
