@@ -148,6 +148,7 @@ header {
 }
 #editor-a {
   background-color:#E6F0FF;
+  flex-grow: 1;
 }
 #editor-r {
   width: 482px;
