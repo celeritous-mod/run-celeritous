@@ -159,6 +159,7 @@ header {
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin-right: 5px;
 }
 #editor-r {
   width: 482px;
@@ -170,7 +171,6 @@ header {
   list-style: none;
   margin: 0;
   padding: 0;
-  background: #fff;
 }
 #e-l-header li {
   display: flex;
@@ -178,6 +178,7 @@ header {
   gap: 5px;
   padding: 10px 15px;
   cursor: pointer;
+  background-color:#D9E3F2;
 }
 #e-l-header img {
   width: 20px;
