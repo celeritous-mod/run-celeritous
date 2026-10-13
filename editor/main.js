@@ -158,6 +158,7 @@ header {
   background-color: #5BAB77;
   flex-shrink: 0;
   display: flex;
+  align-items: center;
 }
 #h-logo img {
   width:124px;
