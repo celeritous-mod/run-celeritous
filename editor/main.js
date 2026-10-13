@@ -75,16 +75,27 @@ html,body{
   const m = document.querySelector('#editor');
   if (m) {
     m.insertAdjacentHTML('beforeend', `
-<header></header>
+<header>
+  <div id="h-logo"><img src="/img/all_logo.svg"></div>
+  <div id="h-set"><img src="https://run.celeritous.xct.f5.si/img/editor/h-set.svg">
+  <span>設定</span><img src="https://run.celeritous.xct.f5.si/img/editor/h-drop.svg"></div>
+  <div id="h-file"><img src="https://run.celeritous.xct.f5.si/img/editor/h-file.svg">
+  <span>ファイル</span><img src="https://run.celeritous.xct.f5.si/img/editor/h-drop.svg"></div>
+  <div id="h-hens"><img src="https://run.celeritous.xct.f5.si/img/editor/h-hens.svg">
+  <span>編集</span><img src="https://run.celeritous.xct.f5.si/img/editor/h-drop.svg"></div>
+  <div id="h-tensen"></div>
+  <div id="h-input"><input type="text" id="title-input" placeholder="プロジェクトのタイトル" value="プロジェクト"></input></div>
+  <div id="h-pro"><img src="https://run.celeritous.xct.f5.si/img/editor/h-pro.svg"><span>プロジェクトページを見る</span></div>
+</header>
 <div id="editor-a">
   <div id="editor-l">
     <div id="e-l-header">
       <ul>
         <li id="e-l-h-code"><img src="https://run.celeritous.xct.f5.si/img/editor/l-h-code.svg"><span>コード</span></li>
         <li id="e-l-h-cos"><img src="https://run.celeritous.xct.f5.si/img/editor/l-h-cos.svg"><span>コスチューム</span></li>
-        <li id="e-l-h-mus"><img src="https://run.celeritous.xct.f5.si/img/editor/l-h-mus.svg"/><span>音</span></li>
-        <li id="e-l-h-tre"><img src="https://run.celeritous.xct.f5.si/img/editor/l-h-tre.svg"/><span>トレース</span></li>
-        <li id="e-l-h-ai"><img src="https://run.celeritous.xct.f5.si/img/editor/l-h-ai.svg"/><span>AI</span></li>
+        <li id="e-l-h-mus"><img src="https://run.celeritous.xct.f5.si/img/editor/l-h-mus.svg"><span>音</span></li>
+        <li id="e-l-h-tre"><img src="https://run.celeritous.xct.f5.si/img/editor/l-h-tre.svg"><span>トレース</span></li>
+        <li id="e-l-h-ai"><img src="https://run.celeritous.xct.f5.si/img/editor/l-h-ai.svg"><span>AI</span></li>
       </ul>
     </div>
     <div id="e-lm"></div>
@@ -167,24 +178,29 @@ header {
   height: 100%;
   flex-shrink: 0;
 }
+#e-l-header {
+  height:36px;
+}
 #e-l-header ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
   color:#575E75;
+  height:36px;
 }
 #e-l-header li {
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 10px 15px;
+  padding: 15px 15px;
   cursor: pointer;
   background-color:#D9E3F2;
   border-style: solid;
   border-color: #00000026;
-  border-width: 1px 1px 0 2px;
+  border-width: 1px 1px 0 1px;
   border-radius: 16px 16px 0 0;
+  margin-right: -6px;
 }
 #e-l-header img {
   width: 20px;
