@@ -159,7 +159,8 @@ header {
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-right: 5px;
+  padding-top: 6px;
+  padding-right: 8px;
 }
 #editor-r {
   width: 482px;
@@ -180,6 +181,10 @@ header {
   padding: 10px 15px;
   cursor: pointer;
   background-color:#D9E3F2;
+  border-style: solid;
+  border-color: #00000026;
+  border-width: 1px 1px 0 2px;
+  border-radius: 16px 16px 0 0;
 }
 #e-l-header img {
   width: 20px;
