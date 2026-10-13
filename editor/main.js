@@ -76,7 +76,7 @@ html,body{
   if (m) {
     m.insertAdjacentHTML('beforeend', `
 <header>
-  <div id="h-logo"><img src="/img/all_logo.svg"></div>
+  <a href="/"><div id="h-logo"><img src="/img/all_logo.svg"></div></a>
   <div id="h-set"><img src="https://run.celeritous.xct.f5.si/img/editor/h-set.svg">
   <span>設定</span><img src="https://run.celeritous.xct.f5.si/img/editor/h-drop.svg"></div>
   <div id="h-file"><img src="https://run.celeritous.xct.f5.si/img/editor/h-file.svg">
@@ -157,6 +157,13 @@ header {
   height: 50px;
   background-color: #5BAB77;
   flex-shrink: 0;
+  display: flex;
+}
+#h-logo img {
+  width:124px;
+  height:30px;
+  margin-left:20px;
+  padding:0 15px;
 }
 #editor-a {
   display: flex;
