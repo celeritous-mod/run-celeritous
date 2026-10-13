@@ -27,6 +27,7 @@ html,body{
   margin:0;
   padding:0;
   overflow: hidden;
+  height:100dvh;
 }
 #load{
   display:flex;
@@ -134,6 +135,9 @@ pwt.load_n=1;
 (() => {
   const s = document.createElement("style");
   s.textContent = `
+#editor{
+  height:100dvh;
+}
 header {
   width:100%;
   height:50px;
