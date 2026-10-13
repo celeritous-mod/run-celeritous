@@ -135,28 +135,53 @@ pwt.load_n=1;
 (() => {
   const s = document.createElement("style");
   s.textContent = `
-#editor{
-  height:100dvh;
+#editor {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  box-sizing: border-box;
 }
 header {
-  width:100%;
-  height:50px;
-  background-color:#5BAB77;
-  position: fixed;
-  top:0;
-  left:0;
+  width: 100%;
+  height: 50px;
+  background-color: #5BAB77;
+  flex-shrink: 0;
+}
+#editor-a {
+  display: flex;
+  background-color: #E6F0FF;
+  flex-grow: 1;
+  height: calc(100dvh - 50px);
+  overflow: hidden;
 }
 #editor-l {
   width: calc(100% - 482px);
-  height: auto;
-}
-#editor-a {
-  background-color:#E6F0FF;
-  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 #editor-r {
   width: 482px;
-  height: auto;
+  height: 100%;
+  flex-shrink: 0;
+}
+#e-l-header ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+#e-l-header li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+#e-l-header img {
+  width: 20px;
+  height: 20px;
 }
 `;
   document.head.append(s);
