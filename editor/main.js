@@ -171,6 +171,7 @@ header {
   list-style: none;
   margin: 0;
   padding: 0;
+  color:#575E75;
 }
 #e-l-header li {
   display: flex;
