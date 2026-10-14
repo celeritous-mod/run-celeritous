@@ -152,11 +152,35 @@ pwt.load_n=1;
   height: 100dvh;
   box-sizing: border-box;
 }
+#h-set:hover, 
+#h-file:hover, 
+#h-hens:hover, 
+#h-pro:hover {
+  background-color: #4a9462;
+}
 header {
   width: 100%;
   height: 50px;
   background-color: #5BAB77;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+header a,
+#h-set,
+#h-file,
+#h-hens,
+#h-input,
+#h-pro {
+  display: flex;
+  align-items: center;
+}
+#h-set, #h-file, #h-hens, #h-pro {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  height:100%;
   display: flex;
   align-items: center;
 }
