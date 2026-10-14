@@ -183,6 +183,7 @@ header a,
   height:100%;
   display: flex;
   align-items: center;
+  padding: 0 4px;
 }
 #h-logo img {
   width:124px;
