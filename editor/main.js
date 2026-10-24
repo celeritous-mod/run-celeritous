@@ -242,6 +242,54 @@ header a,
 `;
   document.head.append(s);
 })();
+(()=>{
+  const d = document;
+  const m = {
+    '#h-set': '<div class="d-m"><div class="d-i">言語</div><div class="d-i">レイアウト</div></div>',
+    '#h-file': '<div class="d-m"><div class="d-i">新規</div><div class="d-i">コンピューターから読み込む</div><div class="d-i">コンピューターに保存する</div><div class="d-i">プロジェクトをパッケージ化する</div><div class="d-i">復元ポイント</div></div>',
+    '#h-hens': '<div class="d-m"><div class="d-i">ターボモード切り替え</div><div class="d-i">高度な設定</div><div class="d-i">アドオン</div><div class="d-i">ユーザー名を変える</div><div class="d-i">クラウド変数設定</div></div>'
+  };
+  const s = d.createElement('style');
+  s.textContent = `
+    #h-set, #h-file, #h-hens {
+      position: relative;
+    }
+    .d-m {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #5BAB77;
+      min-width: 200px;
+      margin: 0;
+      padding: 4px 0;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+      border-radius: 0 0 4px 4px;
+      z-index: 1000;
+    }
+    #h-set:hover .d-m, #h-file:hover .d-m, #h-hens:hover .d-m {
+      display: block;
+    }
+    .d-i {
+      display: block;
+      color: white;
+      padding: 6px 15px;
+      font-size: inherit;
+      font-weight: bold;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .d-i:hover {
+      background-color: #4a9462;
+    }
+  `;
+  d.head.append(s);
+  Object.entries(m).forEach(([k, v]) => {
+    const t = d.querySelector(k);
+    if (t) t.insertAdjacentHTML('beforeend', v);
+  });
+})();
+
 //目標について
 //WASMとWebGPUによる高速化
 //WASMは動的生成。WebGPUはGPGPUとしての使い方もしたい
