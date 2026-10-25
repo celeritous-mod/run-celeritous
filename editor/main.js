@@ -251,37 +251,28 @@ header a,
   };
   const s = d.createElement('style');
   s.textContent = `
-    #h-set, #h-file, #h-hens {
-      position: relative;
-    }
-    .d-m {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #5BAB77;
-      min-width: 200px;
-      margin: 0;
-      padding: 4px 0;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
-      border-radius: 0 0 4px 4px;
-      z-index: 1000;
-    }
-    #h-set:hover .d-m, #h-file:hover .d-m, #h-hens:hover .d-m {
-      display: block;
-    }
-    .d-i {
-      display: block;
-      color: white;
-      padding: 6px 15px;
-      font-size: inherit;
-      font-weight: bold;
-      white-space: nowrap;
-      cursor: pointer;
-    }
-    .d-i:hover {
-      background-color: #4a9462;
-    }
+#h-set, #h-file, #h-hens {
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+#h-set .d-m, #h-file .d-m, #h-hens .d-m {
+  display: none;
+}
+#h-set.open .d-m, #h-file.open .d-m, #h-hens.open .d-m {
+  display: block;
+}
+.d-m {
+  top: 100%;
+  margin-top: 0;
+}
+.d-i {
+  padding: 10px 16px;
+  min-height: 40px;
+  box-sizing: border-box;
+}
   `;
   d.head.append(s);
   Object.entries(m).forEach(([k, v]) => {
@@ -289,7 +280,37 @@ header a,
     if (t) t.insertAdjacentHTML('beforeend', v);
   });
 })();
-
+(() => {
+  const triggers = ['#h-set', '#h-file', '#h-hens']
+    .map(sel => document.querySelector(sel))
+    .filter(Boolean);
+  const closeAll = (except = null) => {
+    triggers.forEach(t => {
+      if (t !== except) t.classList.remove('open');
+    });
+  };
+  triggers.forEach(t => {
+    t.addEventListener('click', e => {
+      if (e.target.closest('.d-m')) {
+        e.stopPropagation();
+        return;
+      }
+      e.stopPropagation();
+      const willOpen = !t.classList.contains('open');
+      closeAll(t);
+      t.classList.toggle('open', willOpen);
+    });
+    t.addEventListener('pointerleave', e => {
+      if (e.pointerType === 'mouse') {
+        t.classList.remove('open');
+      }
+    });
+  });
+  document.addEventListener('click', () => closeAll());
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeAll();
+  });
+})();
 //目標について
 //WASMとWebGPUによる高速化
 //WASMは動的生成。WebGPUはGPGPUとしての使い方もしたい
