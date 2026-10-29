@@ -251,7 +251,6 @@ header a,
   };
   const s = d.createElement('style');
   s.textContent = `
-
 #h-set,
 #h-file,
 #h-hens {
@@ -261,7 +260,6 @@ header a,
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
-
 #h-set .d-m,
 #h-file .d-m,
 #h-hens .d-m {
@@ -270,50 +268,44 @@ header a,
   top: 100%;
   left: 0;
   margin: 0;
-  padding: 5px 0;
+  padding: 3px 0;
   min-width: 190px;
   width: max-content;
   max-width: 320px;
   box-sizing: border-box;
-
-  background-color: #fff;
-  color: #333;
-  border: 1px solid #d5d9df;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px #00000025;
-
+  background-color: #5BAB77;
+  color: #fff;
+  border: none;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 4px 12px #00000020;
   font-size: 14px;
-  font-weight: normal;
+  font-weight: bold;
   z-index: 99999;
 }
-
 #h-set.open .d-m,
 #h-file.open .d-m,
 #h-hens.open .d-m {
   display: block;
 }
-
 .d-i {
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  min-height: 40px;
-  padding: 10px 16px;
+  min-height: 35px;
+  padding: 7px 16px;
   white-space: nowrap;
-  color: #333;
+  color: #fff;
+  font-weight: bold;
   cursor: pointer;
 }
-
 .d-i:hover {
-  background-color: #e8f3ec;
+  background-color: #4a9462;
 }
-
 #h-set.open,
 #h-file.open,
 #h-hens.open {
-  background-color: #4a9462;
+  background-color: #5BAB77;
 }
-
   `;
   d.head.append(s);
   Object.entries(m).forEach(([k, v]) => {
