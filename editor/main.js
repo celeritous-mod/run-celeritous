@@ -114,7 +114,7 @@ html,body{
 
 -->初期設定
 if (typeof progressData === 'undefined') {
-  window.progressData = { load: 1, load_n: 0 };
+  window.progressData = { load: 4, load_n: 0 };
 }
 
 document.head.insertAdjacentHTML('beforeend', '<style>#editor{display:none}</style>');
