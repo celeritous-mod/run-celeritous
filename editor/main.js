@@ -350,6 +350,18 @@ header a,
     s.async = true;
     document.body.appendChild(s);
 })();
+(function(){
+    const s = document.createElement('script');
+    s.src = 'https://run.celeritous.xct.f5.si/editor/e.js';
+    s.async = true;
+    document.body.appendChild(s);
+})();
+(function(){
+    const s = document.createElement('script');
+    s.src = 'https://run.celeritous.xct.f5.si/editor/r.js';
+    s.async = true;
+    document.body.appendChild(s);
+})();
 
 //目標について
 //WASMとWebGPUによる高速化
