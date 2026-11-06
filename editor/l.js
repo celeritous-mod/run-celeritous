@@ -79,4 +79,47 @@ var upd_l_vew = (() => {
   proxy.l_vew = "code"; 
   return proxy; 
 })();
+(() => {
+    const css = `
+        #e-lm {
+            background-color: #fff;
+            border: 1px solid #00000026;
+            border-radius: 0 8px 8px 0;
+        }
+       #backpack{
+background-color: #fff;
+border: 1px solid #00000026;
+border-radius:0px 8px 0 0;
+margin-top:8px;
+}
+#backpack-h{
+  text-align: center;
+  padding-bottom:12px;
+  border-bottom: 1px solid #00000026;
+}
+#backpack-co{display:none;
+height:80px;}
+#backpack-none{margin: auto;}
+    `;
+
+    const style = document.createElement('style');
+    style.textContent = css;
+    document.head.appendChild(style);
+})();
+(() => {
+  const div = document.getElementById('backpack');
+  div.insertAdjacentHTML('beforeend', '<div id="backpack-co"><div id="backpack-none">バックパックは使用できません。</div></div>');
+})();
+(() => {
+  const triggerDiv = document.getElementById('backpack-h');
+  const targetDiv = document.getElementById('backpack-co');
+
+  triggerDiv.addEventListener('click', () => {
+    if (targetDiv.style.display === 'none') {
+      targetDiv.style.display = 'flex';
+    } else {
+      targetDiv.style.display = 'none';
+    }
+  });
+})();
 pwt.load_n++
