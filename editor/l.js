@@ -1,12 +1,28 @@
+const trace_open = JSON.parse(localStorage.getItem('trace_open')) || [];
+const trace_data = JSON.parse(localStorage.getItem('trace_scripts')) || [];
+localStorage.setItem('trace_open', JSON.stringify(trace_open));
+localStorage.setItem('trace_scripts', JSON.stringify(trace_data));
+function trace_update() {
+  let html = "<div class='trace_select_plus'><img src='https://run.celeritouus.xct.f5.si/img/editor/plus.svg'><span>トレース拡張機能を読み込む</span></div>"
+  for(let i = 0;i<trace_script.lenght;i++){
+    let html_mini = "<div class='trace_select' id='trace_select_"+i+"><span"+trace_script[i][0]+"></span><img src='https://run.celeritouus.xct.f5.si/img/editor/h-set.svg' id=trace_set_"+i+"'>"
+    html = html + html_mini
+  }
+}
+function l_tab_change(_val_){
+  if(_val_==="trace"){
+    trace_update()
+  }
+}
 var upd_l_vew = (() => { 
   const target = document.querySelector("#e-lm"); 
   if (!target) return; 
 
-  const views = { 
+  const views = {
     code: `<div id="view-code">コード画面</div>`, 
     costume: `<div id="view-costume">コスチューム画面</div>`, 
     music: `<div id="view-music">音画面</div>`, 
-    trace: `<div id="view-trace">トレース画面</div>`, 
+    trace: `<div id="trace-l"></div><div id="trace-r"></div>`, 
     ai: `<div id="view-ai">AI画面</div>` 
   }; 
 
@@ -53,7 +69,7 @@ var upd_l_vew = (() => {
       flex-grow:1; 
     } 
   `; 
-  document.head.appendChild(style); 
+  document.head.appendChild(style);
 
   const data = { l_vew: null }; 
 
@@ -65,7 +81,8 @@ var upd_l_vew = (() => {
       target.innerHTML = views[val]; 
       elements.forEach(el => { 
         el.classList.toggle("active", tabs[el.id] === val); 
-      });  
+      });
+      l_tab_change(val);
       return true; 
     } 
   }); 
@@ -75,7 +92,6 @@ var upd_l_vew = (() => {
       proxy.l_vew = tabs[el.id]; 
     }); 
   }); 
-
   proxy.l_vew = "code"; 
   return proxy; 
 })();
@@ -101,7 +117,6 @@ margin-top:8px;
 height:80px;}
 #backpack-none{margin: auto;}
     `;
-
     const style = document.createElement('style');
     style.textContent = css;
     document.head.appendChild(style);
